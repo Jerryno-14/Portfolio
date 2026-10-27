@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jerry Qiu | Mechanical Engineering Portfolio</title>
+<meta name="description" content="Portfolio of Jerry Qiu, first-year Mechanical Engineering student at the University of Waterloo: SolidWorks design, machining, and a granted patent.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2F4F3;
+    --sheet: #FBFCFB;
+    --ink: #15222C;
+    --muted: #4C5B66;
+    --line: #15222C;
+    --soft-line: #C5CED3;
+    --blue: #1D4F91;
+    --todo: #FFF1B8;
+    --gutter: 16px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Barlow", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--blue); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+  h1, h2, h3 { font-family: "Barlow Semi Condensed", "Barlow", sans-serif; margin: 0; line-height: 1.1; letter-spacing: -0.01em; }
+  p { margin: 0 0 1em; max-width: 64ch; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* header */
+  .top { border-bottom: 1px solid var(--line); background: var(--paper); }
+  .top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-top: 14px; padding-bottom: 14px; flex-wrap: wrap; }
+  .top .brand { font-family: "Barlow Semi Condensed", sans-serif; font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+  .top nav { display: flex; gap: 22px; }
+  .top nav a { color: var(--ink); text-decoration: none; font-weight: 500; }
+  .top nav a:hover { color: var(--blue); text-decoration: underline; text-underline-offset: 6px; }
+
+  /* hero */
+  .hero { padding: 72px 0 56px; }
+  .hero h1 { font-size: clamp(56px, 12vw, 128px); font-weight: 700; line-height: 0.95; }
+  .dim { display: block; width: 100%; max-width: 760px; height: 36px; margin: 18px 0 14px; overflow: visible; }
+  .dim line, .dim path { stroke: var(--blue); stroke-width: 1.5; fill: none; }
+  .dim .arrow { fill: var(--blue); stroke: none; }
+  .dim text { font-family: "Barlow", sans-serif; font-size: 15px; fill: var(--blue); }
+  .dim .run { stroke-dasharray: 760; stroke-dashoffset: 760; animation: draw 1.1s ease-out 0.2s forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .lede { font-size: clamp(20px, 2.6vw, 26px); line-height: 1.4; max-width: 34ch; margin-bottom: 24px; }
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 10px 18px; border: 1.5px solid var(--ink); color: var(--ink); text-decoration: none; font-weight: 600; background: transparent; }
+  .btn.primary { background: var(--ink); color: var(--paper); }
+  .btn:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+  /* sections */
+  section { padding: 56px 0; border-top: 1px solid var(--line); }
+  section > .wrap > h2 { font-size: clamp(30px, 4vw, 42px); margin-bottom: 28px; }
+
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0; border: 1px solid var(--line); background: var(--sheet); }
+  .skills div { padding: 16px 18px; border-right: 1px solid var(--soft-line); border-bottom: 1px solid var(--soft-line); }
+  .skills dt { font-family: "Barlow Semi Condensed", sans-serif; font-weight: 600; font-size: 19px; margin-bottom: 4px; }
+  .skills dd { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.5; }
+
+  /* project sheets */
+  .sheet { background: var(--sheet); border: 1.5px solid var(--line); margin-bottom: 40px; }
+  .sheet-body { display: grid; grid-template-columns: 1fr; }
+  .sheet-text { padding: 24px 22px 8px; }
+  .sheet-text h3 { font-size: clamp(26px, 3.4vw, 34px); margin-bottom: 14px; }
+  .sheet-text ul { margin: 0 0 1em; padding-left: 1.2em; max-width: 64ch; }
+  .sheet-text li { margin-bottom: 0.5em; }
+  figure { margin: 0; }
+  .plate {
+    position: relative; aspect-ratio: 4 / 3; border-bottom: 1px solid var(--line);
+    background: repeating-linear-gradient(135deg, #E6EBEE 0 10px, #F3F6F7 10px 20px);
+    display: grid; place-items: center; overflow: hidden;
+  }
+  .plate .ph { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 16px; color: var(--muted); font-size: 15px; }
+  .plate img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: var(--sheet); }
+  figcaption { padding: 8px 14px; font-size: 14px; color: var(--muted); border-bottom: 1px solid var(--line); }
+
+  /* title block */
+  .tb { display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line); font-size: 15px; }
+  .tb div { padding: 8px 14px; border-bottom: 1px solid var(--soft-line); }
+  .tb div:last-child { border-bottom: 0; }
+  .tb b { display: block; font-family: "Barlow Semi Condensed", sans-serif; font-weight: 600; font-size: 13px; color: var(--muted); }
+
+  .todo { background: var(--todo); padding: 0 3px; }
+
+  .split { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  .note { border: 1px solid var(--line); background: var(--sheet); padding: 18px 20px; }
+  .note h3 { font-size: 24px; margin-bottom: 8px; }
+  .note p:last-child { margin-bottom: 0; }
+  .note .when { color: var(--muted); font-size: 15px; margin-bottom: 8px; }
+
+  footer { border-top: 1px solid var(--line); padding: 40px 0 56px; }
+  footer h2 { font-size: clamp(30px, 4vw, 42px); margin-bottom: 14px; }
+  footer ul { list-style: none; padding: 0; margin: 0; }
+  footer li { margin-bottom: 6px; }
+  .small { color: var(--muted); font-size: 15px; margin-top: 28px; }
+
+  @media (min-width: 820px) {
+    body { font-size: 18px; }
+    .wrap { padding: 0 32px; }
+    .sheet-body { grid-template-columns: 1.05fr 1fr; }
+    .sheet.flip .sheet-body { grid-template-columns: 1fr 1.05fr; }
+    .media { grid-column: 1; grid-row: 1; border-right: 1px solid var(--line); display: flex; flex-direction: column; }
+    .sheet-text { grid-column: 2; grid-row: 1; }
+    .sheet.flip .media { grid-column: 2; border-right: 0; border-left: 1px solid var(--line); }
+    .sheet.flip .sheet-text { grid-column: 1; }
+    .media figure { flex: 1; display: flex; flex-direction: column; }
+    .media .plate { flex: 1; min-height: 280px; aspect-ratio: auto; }
+    .media figcaption { border-bottom: 0; }
+    .sheet-text { padding: 30px 32px 12px; }
+    .tb { grid-template-columns: repeat(4, 1fr); grid-column: 1 / -1; grid-row: 2; }
+    .tb div { border-bottom: 0; border-right: 1px solid var(--soft-line); }
+    .tb div:last-child { border-right: 0; }
+    .split { grid-template-columns: 1fr 1fr; }
+    .hero { padding: 96px 0 72px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .dim .run { animation: none; stroke-dashoffset: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Jerry Qiu</a>
+    <nav aria-label="Primary">
+      <a href="#projects">Projects</a>
+      <a href="#more">Other work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1>Jerry Qiu</h1>
+    <svg class="dim" viewBox="0 0 760 36" preserveAspectRatio="none" role="img" aria-label="Dimension line">
+      <line x1="0" y1="4" x2="0" y2="28"/>
+      <line x1="760" y1="4" x2="760" y2="28"/>
+      <line class="run" x1="0" y1="16" x2="760" y2="16"/>
+      <path class="arrow" d="M0 16 L12 11 L12 21 Z"/>
+      <path class="arrow" d="M760 16 L748 11 L748 21 Z"/>
+    </svg>
+    <p class="lede">First-year Mechanical Engineering student at the University of Waterloo. I design in SolidWorks, machine parts by hand, and like seeing a drawing turn into something that fits.</p>
+    <div class="actions">
+      <a class="btn primary" href="#projects">See projects</a>
+      <a class="btn" href="resume.pdf">Download resume</a>
+    </div>
+  </div>
+
+  <section aria-labelledby="skills-h">
+    <div class="wrap">
+      <h2 id="skills-h">What I work with</h2>
+      <dl class="skills">
+        <div><dt>CAD and drawings</dt><dd>SolidWorks (parts, assemblies, drawings), AutoCAD, reading engineering drawings</dd></div>
+        <div><dt>Machining</dt><dd>Mill, lathe, and drill press; parts held to ±0.1 mm</dd></div>
+        <div><dt>Data</dt><dd>Excel for collecting, cleaning, and organizing large records</dd></div>
+        <div><dt>Safety</dt><dd>WHMIS certified (University of Waterloo)</dd></div>
+        <div><dt>Languages</dt><dd>English, Chinese</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <h2 id="projects-h">Projects</h2>
+
+      <!-- Project 1 -->
+      <article class="sheet">
+        <div class="sheet-body">
+          <div class="media">
+            <figure>
+              <div class="plate">
+                <div class="ph">Add a SolidWorks render of the housing<br>images/reducer-housing.png</div>
+                <img src="images/reducer-housing.png" alt="SolidWorks render of the single-stage gear reducer housing" onerror="this.remove()">
+              </div>
+              <figcaption>Fig. 1: Gear reducer housing, base and cover.</figcaption>
+            </figure>
+          </div>
+          <div class="sheet-text">
+            <h3>Single-stage gear reducer housing</h3>
+            <p>I modeled the base and the cover of a single-stage gear reducer housing in SolidWorks, then assembled them so the two halves fit together.</p>
+            <ul>
+              <li><span class="todo">[Features you used: shell, ribs, bearing bosses, bolt-hole pattern, etc.]</span></li>
+              <li><span class="todo">[One design problem you ran into and how you solved it]</span></li>
+              <li><span class="todo">[Drawings or an assembly you produced, if any]</span></li>
+            </ul>
+          </div>
+          <div class="tb">
+            <div><b>Date</b>Oct 2026</div>
+            <div><b>Tools</b>SolidWorks</div>
+            <div><b>Scope</b>Base, cover, assembly</div>
+            <div><b>Type</b>Individual project</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="sheet flip">
+        <div class="sheet-body">
+          <div class="media">
+            <figure>
+              <div class="plate">
+                <div class="ph">Add a photo of the finished keychain<br>images/keychain.jpg</div>
+                <img src="images/keychain.jpg" alt="Machined keychain part" onerror="this.remove()">
+              </div>
+              <figcaption>Fig. 2: Machined keychain.</figcaption>
+            </figure>
+          </div>
+          <div class="sheet-text">
+            <h3>Machined keychain</h3>
+            <p>I made a part from raw stock by working through seven machining operations on a mill, lathe, and drill press, following an engineering drawing and holding every dimension to ±0.1 mm.</p>
+            <ul>
+              <li>Planned the order of operations so each setup referenced the same datum.</li>
+              <li>Checked dimensions against the drawing after each operation.</li>
+              <li><span class="todo">[Material, and anything that went wrong and what you changed]</span></li>
+            </ul>
+          </div>
+          <div class="tb">
+            <div><b>Date</b><span class="todo">[Term, year]</span></div>
+            <div><b>Tools</b>Mill, lathe, drill press</div>
+            <div><b>Tolerance</b>±0.1 mm</div>
+            <div><b>Operations</b>7</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="sheet">
+        <div class="sheet-body">
+          <div class="media">
+            <figure>
+              <div class="plate">
+                <div class="ph">Add a render or drawing of the clevis<br>images/clevis.png</div>
+                <img src="images/clevis.png" alt="SolidWorks model and drawing of the balance bar clevis" onerror="this.remove()">
+              </div>
+              <figcaption>Fig. 3: Balance bar clevis.</figcaption>
+            </figure>
+          </div>
+          <div class="sheet-text">
+            <h3>Balance bar clevis</h3>
+            <p>I modeled a balance bar clevis in SolidWorks and documented it with a dimensioned engineering drawing.</p>
+            <ul>
+              <li><span class="todo">[What the part does and how it is loaded]</span></li>
+              <li><span class="todo">[Features and constraints you used, e.g. fully defined sketches, hole callouts]</span></li>
+            </ul>
+          </div>
+          <div class="tb">
+            <div><b>Date</b><span class="todo">[Term, year]</span></div>
+            <div><b>Tools</b>SolidWorks</div>
+            <div><b>Scope</b>Part and drawing</div>
+            <div><b>Type</b>Course project</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="sheet flip">
+        <div class="sheet-body">
+          <div class="media">
+            <figure>
+              <div class="plate">
+                <div class="ph">Add photos or renders of the transport box<br>images/turtle-box.png</div>
+                <img src="images/turtle-box.png" alt="Sea turtle transport box design" onerror="this.remove()">
+              </div>
+              <figcaption>Fig. 4: Sea turtle transport box.</figcaption>
+            </figure>
+          </div>
+          <div class="sheet-text">
+            <h3>Sea turtle transport box</h3>
+            <p>With a team of six, I helped design a transport box for rescued sea turtles. The design went through three versions and was granted a Chinese invention patent.</p>
+            <ul>
+              <li><span class="todo">[Your part: what you personally designed, drew, or tested]</span></li>
+              <li><span class="todo">[What changed between version 1, 2, and 3, and why]</span></li>
+            </ul>
+          </div>
+          <div class="tb">
+            <div><b>Team</b>6 people</div>
+            <div><b>Iterations</b>3 versions</div>
+            <div><b>Outcome</b>Chinese invention patent granted</div>
+            <div><b>Date</b><span class="todo">[Year]</span></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="more" aria-labelledby="more-h">
+    <div class="wrap">
+      <h2 id="more-h">Other work</h2>
+      <div class="split">
+        <div class="note">
+          <h3>Sea turtle rescue data project</h3>
+          <p class="when">Jan 2023 to Jun 2024, member</p>
+          <p>Collected more than 1,200 rescue records from several online sources, put them into one Excel workbook, and cleaned them so they could be compared and analyzed.</p>
+        </div>
+        <div class="note">
+          <h3>Team leadership</h3>
+          <p class="when">Basketball team and high school hockey club</p>
+          <p>On the basketball team, I gathered feedback from all 12 players, turned it into two or three action items, and led them. As leader of the hockey club (Sep 2025 to Jun 2026), I recruited more than 50 new members and kept nearly all of them by splitting practice into skill-based groups.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>I am looking for co-op and internship opportunities in mechanical design and manufacturing.</p>
+    <ul>
+      <li>Email: <a href="mailto:y229qiu@uwaterloo.ca">y229qiu@uwaterloo.ca</a></li>
+      <!-- Add your links, then delete this comment:
+      <li>GitHub: <a href="https://github.com/YOUR-USERNAME">github.com/YOUR-USERNAME</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/YOUR-PROFILE">linkedin.com/in/YOUR-PROFILE</a></li>
+      -->
+    </ul>
+    <p class="small">University of Waterloo, Mechanical Engineering</p>
+  </div>
+</footer>
+
+</body>
+</html>
