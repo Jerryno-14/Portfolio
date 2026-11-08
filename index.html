@@ -136,6 +136,16 @@
     .sheet.feature .sheet-text { grid-column: 1; grid-row: 2; }
     .sheet.feature .tb { grid-row: 3; }
   }
+  .thumbs { display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line); }
+  .thumbs figure { border-bottom: 1px solid var(--soft-line); }
+  .thumbs .plate { aspect-ratio: var(--ar, 4 / 3); }
+  @media (min-width: 820px) {
+    .thumbs { grid-template-columns: repeat(3, 1fr); align-items: start; }
+    .thumbs figure { border-bottom: 0; border-right: 1px solid var(--soft-line); }
+    .thumbs figure:last-child { border-right: 0; }
+    .media .thumbs figure { flex: none; }
+    .sheet.feature .media .thumbs .plate { flex: none; min-height: 0; max-height: none; width: 100%; aspect-ratio: var(--ar, 4 / 3); }
+  }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .dim .run { animation: none; stroke-dashoffset: 0; }
@@ -200,6 +210,26 @@
               </div>
               <figcaption>Fig. 1: Complete single-stage gear reducer assembly.</figcaption>
             </figure>
+            <div class="thumbs">
+              <figure>
+                <div class="plate" style="--ar: 863 / 680">
+                  <img src="images/reducer-closed.jpg" alt="SolidWorks render of the closed gear reducer seen from the front, with the inspection window plate and a round cap on top" loading="lazy">
+                </div>
+                <figcaption>Fig. 2: Closed housing.</figcaption>
+              </figure>
+              <figure>
+                <div class="plate" style="--ar: 863 / 680">
+                  <img src="images/reducer-transparent.jpg" alt="Transparent wireframe view of the gear reducer showing the internal parts through the housing" loading="lazy">
+                </div>
+                <figcaption>Fig. 3: Transparent view of the internal parts.</figcaption>
+              </figure>
+              <figure>
+                <div class="plate" style="--ar: 863 / 680">
+                  <img src="images/reducer-section.jpg" alt="Section view of the gear reducer showing the pinion meshing with the large gear inside the housing" loading="lazy">
+                </div>
+                <figcaption>Fig. 4: Section view, pinion and gear.</figcaption>
+              </figure>
+            </div>
           </div>
           <div class="sheet-text">
             <h3>Single-stage gear reducer</h3>
@@ -229,7 +259,7 @@
                 <div class="ph">Add a photo of the finished keychain<br>images/keychain.jpg</div>
                 <img src="images/keychain.jpg" alt="Machined keychain part" onerror="this.remove()">
               </div>
-              <figcaption>Fig. 2: Machined keychain.</figcaption>
+              <figcaption>Fig. 5: Machined keychain.</figcaption>
             </figure>
           </div>
           <div class="sheet-text">
@@ -259,7 +289,7 @@
                 <div class="ph">Add a picture of the transport box<br>images/turtle-box.png</div>
                 <img src="images/turtle-box.png" alt="Patent drawing of the sea turtle transport box with its side panels folded down to form ramps" onerror="this.remove()">
               </div>
-              <figcaption>Fig. 3: Side panels folded down to form ramps (patent drawing, CN 210761864 U).</figcaption>
+              <figcaption>Fig. 6: Side panels folded down to form ramps (patent drawing, CN 210761864 U).</figcaption>
             </figure>
           </div>
           <div class="sheet-text">
