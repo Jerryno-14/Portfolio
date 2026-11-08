@@ -85,6 +85,8 @@
   }
   .plate .ph { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 16px; color: var(--muted); font-size: 15px; }
   .plate img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: var(--sheet); }
+  .plate.fit { background: #e3e3e3; }
+  .plate.fit img { object-fit: contain; background: transparent; }
   figcaption { padding: 8px 14px; font-size: 14px; color: var(--muted); border-bottom: 1px solid var(--line); }
 
   /* title block */
@@ -125,6 +127,13 @@
     .tb div:last-child { border-right: 0; }
     .split { grid-template-columns: 1fr 1fr; }
     .hero { padding: 96px 0 72px; }
+  }
+  @media (min-width: 820px) {
+    .sheet.feature .sheet-body { grid-template-columns: 1fr; }
+    .sheet.feature .media { grid-column: 1; grid-row: 1; border-right: 0; border-bottom: 1px solid var(--line); }
+    .sheet.feature .media .plate { flex: none; min-height: 0; aspect-ratio: 956 / 654; max-height: 600px; width: 100%; }
+    .sheet.feature .sheet-text { grid-column: 1; grid-row: 2; }
+    .sheet.feature .tb { grid-row: 3; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -180,30 +189,30 @@
       <h2 id="projects-h">Projects</h2>
 
       <!-- Project 1 -->
-      <article class="sheet">
+      <article class="sheet feature">
         <div class="sheet-body">
           <div class="media">
             <figure>
-              <div class="plate">
-                <div class="ph">Add a SolidWorks render of the housing<br>images/reducer-housing.png</div>
-                <img src="images/reducer-housing.png" alt="SolidWorks render of the single-stage gear reducer housing" onerror="this.remove()">
+              <div class="plate fit">
+                <div class="ph">Add a SolidWorks render of the reducer<br>images/reducer-housing.png</div>
+                <img src="images/reducer-housing.png" alt="SolidWorks render of the complete single-stage gear reducer: dark housing with two gear shafts, gears, bolts, an inspection window plate and a drain plug" onerror="this.remove()">
               </div>
-              <figcaption>Fig. 1: Gear reducer housing, base and cover.</figcaption>
+              <figcaption>Fig. 1: Complete single-stage gear reducer assembly.</figcaption>
             </figure>
           </div>
           <div class="sheet-text">
-            <h3>Single-stage gear reducer housing</h3>
-            <p>A self-directed project: I modeled the base and the cover of a single-stage gear reducer housing as two separate parts in SolidWorks, then put them together in an assembly. The finished housing measures 195 × 137 × 97 mm.</p>
+            <h3>Single-stage gear reducer</h3>
+            <p>A self-directed project: a complete single-stage gear reducer modeled in SolidWorks. I started with the housing, as a separate base and cover (195 × 137 × 97 mm), then built it up into a full assembly with the shafts, gears, end covers, bolts, inspection window plate, and drain plug.</p>
             <ul>
-              <li>Built the two parts with 38 solid features in total (20 in the base, 18 in the cover), including two bearing bores (Ø53 mm and Ø70 mm) set 123.3 mm apart.</li>
+              <li>Built the housing with 38 solid features in total (20 in the base, 18 in the cover), including two bearing bores (Ø53 mm and Ø70 mm) set 123.3 mm apart.</li>
               <li>Designed the cover inside the assembly, referencing the base's sketches, so the mating flanges and the four M8 bolt holes line up between the two parts. I checked the fit with mates in the assembly.</li>
               <li>Added 6 mm stiffening ribs (mirrored to the other side), an M18 threaded drain port in the base, and four M3 holes in the cover for an inspection window plate.</li>
             </ul>
           </div>
           <div class="tb">
-            <div><b>Date</b>Jul to Aug 2026</div>
+            <div><b>Date</b>Jul to Nov 2026</div>
             <div><b>Tools</b>SolidWorks</div>
-            <div><b>Scope</b>Base, cover, assembly</div>
+            <div><b>Scope</b>Housing, shafts, gears, full assembly</div>
             <div><b>Type</b>Self-directed project</div>
           </div>
         </div>
