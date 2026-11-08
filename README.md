@@ -6,7 +6,7 @@ A single-page portfolio for GitHub Pages. No build step.
 
 - `index.html`: the whole site (styles are inside it)
 - `images/`: put your pictures here
-- `resume.pdf`: put your resume here (the "Download resume" button links to it)
+- `resume.pdf` (optional): the site has no resume button right now. To add one, put your resume here and add a link to it in the hero section of `index.html`.
 
 ## Images to add
 
@@ -28,7 +28,7 @@ Also remove or fix any claim you cannot explain in an interview.
 ## Publish on GitHub Pages
 
 1. Create a repository named `YOUR-USERNAME.github.io` (public).
-2. Upload `index.html`, `README.md`, `resume.pdf`, and the `images` folder.
+2. Upload `index.html`, `README.md`, and the `images` folder.
 3. In the repository, open Settings, then Pages. Under "Build and deployment", choose "Deploy from a branch", branch `main`, folder `/ (root)`, and save.
 4. After a minute or two the site is live at `https://YOUR-USERNAME.github.io`.
 
