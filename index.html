@@ -85,6 +85,7 @@
   }
   .plate .ph { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: 16px; color: var(--muted); font-size: 15px; }
   .plate img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: var(--sheet); }
+  .plate a { position: absolute; inset: 0; display: block; }
   .plate.fit { background: #e3e3e3; }
   .plate.fit img { object-fit: contain; background: transparent; }
   .plate.fit.paper { background: #fff; }
@@ -234,7 +235,7 @@
             <h3>Single-stage gear reducer</h3>
             <p>A self-directed project: a complete single-stage gear reducer modeled in SolidWorks. I started with the housing, as a separate base and cover (195 × 137 × 97 mm), then built it up into a full assembly with the shafts, gears, end covers, bolts, inspection window plate, and drain plug.</p>
             <ul>
-              <li>Built the housing with 38 solid features in total (20 in the base, 18 in the cover), including two bearing bores (Ø53 mm and Ø70 mm) set 123.3 mm apart.</li>
+              <li>Built the housing with 38 solid features in total (20 in the base, 18 in the cover).</li>
               <li>Designed the cover inside the assembly, referencing the base's sketches, so the mating flanges and the four M8 bolt holes line up between the two parts. I checked the fit with mates in the assembly.</li>
               <li>Added 6 mm stiffening ribs (mirrored to the other side), an M18 threaded drain port in the base, and four M3 holes in the cover for an inspection window plate.</li>
               <li>In progress: I am now running a finite element analysis (FEA) on the reducer. I will add the setup and results here when it is done.</li>
@@ -306,6 +307,37 @@
             <div><b>Iterations</b>3 versions</div>
             <div><b>Outcome</b>Chinese utility model and invention patent</div>
             <div><b>Filed</b>July 2019</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="sheet feature">
+        <div class="sheet-body">
+          <div class="media">
+            <figure>
+              <div class="plate fit" style="aspect-ratio: 1600 / 1035; max-height: none; background: #161616">
+                <a href="images/syringe-pump.jpg" target="_blank" rel="noopener" aria-label="Open the labeled photo of the syringe pump at full size">
+                  <img src="images/syringe-pump.jpg" alt="Top-down photo of the syringe pump prototype with every part labeled: 12 V DC motor, crank disk, connecting rod, syringe holder, one-way valve, T-junction, nozzle, temporary water tank, PWM controller, switch, inline fuse and 12 V power supply" loading="lazy">
+                </a>
+              </div>
+              <figcaption>Fig. 7: The syringe pump prototype with its parts labeled. Click the photo to enlarge.</figcaption>
+            </figure>
+          </div>
+          <div class="sheet-text">
+            <h3>Crank-driven syringe pump</h3>
+            <p>A small prototype that moves water from a tank to a nozzle with a syringe. A motor turns a crank disk, and a connecting rod changes that rotation into the back-and-forth motion of the syringe plunger.</p>
+            <ul>
+              <li>A 12 V DC motor drives the crank disk, and a PWM controller sets the motor speed.</li>
+              <li>The syringe sits in a holder. Its tube splits at a T-junction into one line to the water tank and one line to the nozzle, with a one-way valve on the nozzle line.</li>
+              <li>The circuit has a 12 V supply, an inline fuse, and a switch.</li>
+            </ul>
+          </div>
+          <div class="tb">
+            <div><b>Type</b>Prototype</div>
+            <div><b>Drive</b>12 V DC motor with crank</div>
+            <div><b>Control</b>PWM speed controller</div>
+            <div><b>Protection</b>Inline fuse</div>
           </div>
         </div>
       </article>
