@@ -321,23 +321,24 @@
                   <img src="images/syringe-pump.jpg" alt="Top-down photo of the syringe pump prototype with every part labeled: 12 V DC motor, crank disk, connecting rod, syringe holder, one-way valve, T-junction, nozzle, temporary water tank, PWM controller, switch, inline fuse and 12 V power supply" loading="lazy">
                 </a>
               </div>
-              <figcaption>Fig. 7: The syringe pump prototype with its parts labeled. Click the photo to enlarge.</figcaption>
+              <figcaption>Fig. 7: The spray pump prototype with its parts labeled. Click the photo to enlarge.</figcaption>
             </figure>
           </div>
           <div class="sheet-text">
-            <h3>Crank-driven syringe pump</h3>
-            <p>A small prototype that moves water from a tank to a nozzle with a syringe. A motor turns a crank disk, and a connecting rod changes that rotation into the back-and-forth motion of the syringe plunger.</p>
+            <h3>Crank-driven water spray pump for a toy truck</h3>
+            <p>The first design, a hand-pumped syringe, was too hard for children to operate, so the final design uses a motor instead. A geared DC motor turns a crank disk, and a connecting rod (slider-crank, like an engine piston) moves the syringe plunger back and forth.</p>
             <ul>
-              <li>A 12 V DC motor drives the crank disk, and a PWM controller sets the motor speed.</li>
-              <li>The syringe sits in a holder. Its tube splits at a T-junction into one line to the water tank and one line to the nozzle, with a one-way valve on the nozzle line.</li>
-              <li>The circuit has a 12 V supply, an inline fuse, and a switch.</li>
+              <li>A 12 V, 30 rpm motor with a 10 mm crank radius gives a 20 mm stroke, about 8 mL per stroke, and one jet roughly every 2 s.</li>
+              <li>The crank disk, connecting rod, syringe holder and nozzle are 3D printed in PETG. Two check valves and a T-junction connect the 30 mL syringe to the water tank and to a 1 mm roof nozzle that angles 20° to 45° upward.</li>
+              <li>A PWM controller sets the spray rate through a fuse and a switch, with no code. A Bluetooth or relay control was considered and rejected as over-complicated. The crank idea comes from US patent 4,706,848.</li>
+              <li>Test at a 45° nozzle angle, two trials of five strokes each from rest: the first jet reached about 20 cm, the range rose to about 70 cm by the fourth stroke, and it then held at 70 to 73 cm. The short first strokes are attributed to air in the syringe and tubing, which takes about 24 mL (three strokes) to fill. The measured range works out to an exit speed of about 2.6 m/s.</li>
             </ul>
           </div>
           <div class="tb">
             <div><b>Type</b>Prototype</div>
-            <div><b>Drive</b>12 V DC motor with crank</div>
-            <div><b>Control</b>PWM speed controller</div>
-            <div><b>Protection</b>Inline fuse</div>
+            <div><b>Drive</b>12 V, 30 rpm motor, slider-crank</div>
+            <div><b>Parts</b>PETG 3D prints</div>
+            <div><b>Range</b>About 70 cm at 45°</div>
           </div>
         </div>
       </article>
