@@ -250,7 +250,69 @@
         </div>
       </article>
 
-      <!-- Project 2 -->
+      <!-- Project: spray pump -->
+      <article class="sheet feature">
+        <div class="sheet-body">
+          <div class="media">
+            <figure>
+              <div class="plate fit" style="aspect-ratio: 1600 / 1035; max-height: none; background: #161616">
+                <a href="images/syringe-pump.jpg" target="_blank" rel="noopener" aria-label="Open the labeled photo of the syringe pump at full size">
+                  <img src="images/syringe-pump.jpg" alt="Top-down photo of the syringe pump prototype with every part labeled: 12 V DC motor, crank disk, connecting rod, syringe holder, one-way valve, T-junction, nozzle, temporary water tank, PWM controller, switch, inline fuse and 12 V power supply" loading="lazy">
+                </a>
+              </div>
+              <figcaption>Fig. 5: The spray pump prototype with its parts labeled. Click the photo to enlarge.</figcaption>
+            </figure>
+          </div>
+          <div class="sheet-text">
+            <h3>Crank-driven water spray pump for a toy truck</h3>
+            <p>The first design, a hand-pumped syringe, was too hard for children to operate, so the final design uses a motor instead. A geared DC motor turns a crank disk, and a connecting rod (slider-crank, like an engine piston) moves the syringe plunger back and forth.</p>
+            <ul>
+              <li>A 12 V, 30 rpm motor with a 10 mm crank radius gives a 20 mm stroke, about 8 mL per stroke, and one jet roughly every 2 s.</li>
+              <li>The crank disk, connecting rod, syringe holder and nozzle are 3D printed in PETG. Two check valves and a T-junction connect the 30 mL syringe to the water tank and to a 1 mm roof nozzle that angles 20° to 45° upward.</li>
+              <li>A PWM controller sets the spray rate through a fuse and a switch, with no code. A Bluetooth or relay control was considered and rejected as over-complicated. The crank idea comes from US patent 4,706,848.</li>
+              <li>Test at a 45° nozzle angle, two trials of five strokes each from rest: the first jet reached about 20 cm, the range rose to about 70 cm by the fourth stroke, and it then held at 70 to 73 cm. The short first strokes are attributed to air in the syringe and tubing, which takes about 24 mL (three strokes) to fill. The measured range works out to an exit speed of about 2.6 m/s.</li>
+            </ul>
+          </div>
+          <div class="tb">
+            <div><b>Type</b>Prototype</div>
+            <div><b>Drive</b>12 V, 30 rpm motor, slider-crank</div>
+            <div><b>Parts</b>PETG 3D prints</div>
+            <div><b>Range</b>About 70 cm at 45°</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project: F1 -->
+      <article class="sheet feature">
+        <div class="sheet-body">
+          <div class="media">
+            <figure>
+              <div class="plate fit paper" style="aspect-ratio: 1534 / 586; max-height: none">
+                <img src="images/f1-rpm-shifts.png" alt="Plot of estimated engine speed in RPM against time over a 10 second clip, with three dashed red lines marking detected drops in RPM" loading="lazy">
+              </div>
+              <figcaption>Fig. 6: Estimated engine speed from a 10 s onboard clip. Red lines mark RPM drops flagged as possible gear shifts.</figcaption>
+            </figure>
+          </div>
+          <div class="sheet-text">
+            <h3>Engine RPM from F1 onboard audio</h3>
+            <p>A Python project that estimates engine speed from the sound of an F1 onboard recording. A V6 fires three times per revolution, so the main frequency is RPM / 20 and the spectrogram shows harmonic lines at multiples of it.</p>
+            <ul>
+              <li>Scores candidate line spacings in the spectrogram to pick the engine speed, then removes outliers with a median filter.</li>
+              <li>Flags sudden RPM drops as possible gear shifts.</li>
+              <li>Includes a synthetic engine sound with a known RPM curve for checking the method.</li>
+              <li>In progress: the real-audio result has not yet been checked against a known answer. <a href="https://github.com/Jerryno-14/F1-audio" target="_blank" rel="noopener">Code on GitHub</a>.</li>
+            </ul>
+          </div>
+          <div class="tb">
+            <div><b>Type</b>Self-directed, in progress</div>
+            <div><b>Date</b>Nov 2026</div>
+            <div><b>Language</b>Python</div>
+            <div><b>Libraries</b>NumPy, SciPy, Matplotlib</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project: keychain -->
       <article class="sheet flip">
         <div class="sheet-body">
           <div class="media">
@@ -259,7 +321,7 @@
                 <div class="ph">Add a photo of the finished keychain<br>images/keychain.jpg</div>
                 <img src="images/keychain.jpg" alt="The finished keychain: a metal body with a purple plastic part at one end and a split ring at the other" onerror="this.remove()">
               </div>
-              <figcaption>Fig. 5: Machined keychain.</figcaption>
+              <figcaption>Fig. 7: Machined keychain.</figcaption>
             </figure>
           </div>
           <div class="sheet-text">
@@ -279,7 +341,7 @@
         </div>
       </article>
 
-      <!-- Project 3 -->
+      <!-- Project: turtle box -->
       <article class="sheet">
         <div class="sheet-body">
           <div class="media">
@@ -288,7 +350,7 @@
                 <div class="ph">Add a picture of the transport box<br>images/turtle-box.png</div>
                 <img src="images/turtle-box.png" alt="Patent drawing of the sea turtle transport box with its side panels folded down to form ramps" onerror="this.remove()">
               </div>
-              <figcaption>Fig. 6: Side panels folded down to form ramps (patent drawing, CN 210761864 U).</figcaption>
+              <figcaption>Fig. 8: Side panels folded down to form ramps (patent drawing, CN 210761864 U).</figcaption>
             </figure>
           </div>
           <div class="sheet-text">
@@ -310,38 +372,6 @@
           </div>
         </div>
       </article>
-
-      <!-- Project 4 -->
-      <article class="sheet feature">
-        <div class="sheet-body">
-          <div class="media">
-            <figure>
-              <div class="plate fit" style="aspect-ratio: 1600 / 1035; max-height: none; background: #161616">
-                <a href="images/syringe-pump.jpg" target="_blank" rel="noopener" aria-label="Open the labeled photo of the syringe pump at full size">
-                  <img src="images/syringe-pump.jpg" alt="Top-down photo of the syringe pump prototype with every part labeled: 12 V DC motor, crank disk, connecting rod, syringe holder, one-way valve, T-junction, nozzle, temporary water tank, PWM controller, switch, inline fuse and 12 V power supply" loading="lazy">
-                </a>
-              </div>
-              <figcaption>Fig. 7: The spray pump prototype with its parts labeled. Click the photo to enlarge.</figcaption>
-            </figure>
-          </div>
-          <div class="sheet-text">
-            <h3>Crank-driven water spray pump for a toy truck</h3>
-            <p>The first design, a hand-pumped syringe, was too hard for children to operate, so the final design uses a motor instead. A geared DC motor turns a crank disk, and a connecting rod (slider-crank, like an engine piston) moves the syringe plunger back and forth.</p>
-            <ul>
-              <li>A 12 V, 30 rpm motor with a 10 mm crank radius gives a 20 mm stroke, about 8 mL per stroke, and one jet roughly every 2 s.</li>
-              <li>The crank disk, connecting rod, syringe holder and nozzle are 3D printed in PETG. Two check valves and a T-junction connect the 30 mL syringe to the water tank and to a 1 mm roof nozzle that angles 20° to 45° upward.</li>
-              <li>A PWM controller sets the spray rate through a fuse and a switch, with no code. A Bluetooth or relay control was considered and rejected as over-complicated. The crank idea comes from US patent 4,706,848.</li>
-              <li>Test at a 45° nozzle angle, two trials of five strokes each from rest: the first jet reached about 20 cm, the range rose to about 70 cm by the fourth stroke, and it then held at 70 to 73 cm. The short first strokes are attributed to air in the syringe and tubing, which takes about 24 mL (three strokes) to fill. The measured range works out to an exit speed of about 2.6 m/s.</li>
-            </ul>
-          </div>
-          <div class="tb">
-            <div><b>Type</b>Prototype</div>
-            <div><b>Drive</b>12 V, 30 rpm motor, slider-crank</div>
-            <div><b>Parts</b>PETG 3D prints</div>
-            <div><b>Range</b>About 70 cm at 45°</div>
-          </div>
-        </div>
-      </article>
     </div>
   </section>
 
@@ -349,11 +379,6 @@
     <div class="wrap">
       <h2 id="more-h">Other work</h2>
       <div class="split">
-        <div class="note" style="grid-column: 1 / -1">
-          <h3>Engine RPM from F1 onboard audio</h3>
-          <p class="when">Nov 2026, self-directed, Python (NumPy, SciPy, Matplotlib), in progress</p>
-          <p>Estimating engine speed from the sound of an F1 onboard recording. A V6 fires three times per revolution, so the harmonic lines in the spectrogram are spaced at RPM / 20, and I score candidate spacings to pick the engine speed. Sudden RPM drops are flagged as possible gear shifts. A synthetic engine sound with a known RPM curve is included for checking the method. The real-audio result has not been checked against a known answer yet. <a href="https://github.com/Jerryno-14/F1-audio" target="_blank" rel="noopener">Code on GitHub</a>.</p>
-        </div>
         <div class="note">
           <h3>Sea turtle rescue data project</h3>
           <p class="when">Jan 2023 to Jun 2024, member</p>
